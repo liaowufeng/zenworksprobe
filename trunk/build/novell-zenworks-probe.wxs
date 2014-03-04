@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+<Product
+   Manufacturer="Novell, Inc."
+   Language="1033"
+   Version="$(var.VERSION)"
+   Name="ZENworks Probe"
+   UpgradeCode="fd358177-680e-4e65-b385-4c9846bdd3c2"
+   Id="????????-????-????-????-????????????"
+   >
+   <Package
+      Id="????????-????-????-????-????????????"
+      Description="ZENworks Probe"
+      InstallerVersion="200"
+      Compressed="yes" />
+   <Condition
+      Message="[ProductName] requires that your computer is running Windows 2000, Windows XP, Windows 2003 or Windows 2008 Server">
+      <![CDATA[(Not Version9X=400) And (Not Version9X=410) And (Not Version9X=490) And (Not VersionNT=400)]]>
+   </Condition>
+
+   <!-- Prevent the MSI from showing up in the Add/Remove Programs Applet -->
+   <Property Id='ARPSYSTEMCOMPONENT' Value='1'/>
+   <Property Id="UPGRADE_VERSIONS" Secure="yes"/>
+   <Property Id="NEWER_VERSIONS" Secure="yes"/>
+   
+
+  
+   <Media Id="1" Cabinet="Product.cab" EmbedCab="yes" />
+
+
+   <Directory Id="TARGETDIR" Name="SourceDir">
+         <Directory Id="INSTALLLOCATION" Name="Novell">
+            <Directory Id="ZENHOME" Name="ZENworks">
+               <Directory Id="SHARE" Name="share">
+                  <Directory Id="TOMCATHOME" Name="tomcat">
+					<Directory Id="TOMCATWEBAPP" Name="webapps">
+						<Component Id="probe_component1" Guid="1ec806bc-8008-41f0-9e46-c974c776511b" DiskId="1">
+							<RemoveFile Id="NovellZENworksProbe" Name="probe.war" LongName="zenworks-probe.war" On="both"/>
+							<File Id="NovellZENworksProbe" LongName="zenworks-probe.war" Name="probe.war" src="..\web\target\zenworks-probe.war"/>
+						</Component>
+					</Directory>
+                  </Directory>
+               </Directory>               
+	          </Directory>
+         </Directory>			
+      </Directory>
+   
+   
+	
+    <Feature Id="AllComponents" Title="AllComponents" Level="1">
+		<ComponentRef Id="probe_component1"/>
+    </Feature>
+     
+  <CustomAction Id="NEWER_VERSION_PRESENT" Error="A newer version already exists"/>
+
+			  
+  <Upgrade Id="fd358177-680e-4e65-b385-4c9846bdd3c2">
+     <UpgradeVersion IgnoreRemoveFailure="yes" IncludeMaximum="yes" Maximum="$(var.VERSION)" Property="UPGRADE_VERSIONS"/>
+     <UpgradeVersion OnlyDetect="yes" IgnoreRemoveFailure="yes" IncludeMinimum="no" Minimum="$(var.VERSION)" Property="NEWER_VERSIONS"/>   
+  </Upgrade>
+
+   <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallFinalize"/>
+      <Custom Action="NEWER_VERSION_PRESENT" After="FindRelatedProducts">
+         NEWER_VERSIONS
+      </Custom>
+   </InstallExecuteSequence>
+  
+</Product>
+</Wix>

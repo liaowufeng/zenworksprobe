@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- * Licensed under the GPL License. You may not use this file except in 
+	* compliance with the License. You may obtain a copy of the License at * 
+	* http://www.gnu.org/licenses/old-licenses/gpl-2.0.html * * THIS PACKAGE 
+	IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED * WARRANTIES, INCLUDING, 
+	WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF * MERCHANTIBILITY AND FITNESS 
+	FOR A PARTICULAR PURPOSE. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<sec:http>
+		<sec:intercept-url pattern="/login.jsp"	access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/autherror.jsp"	access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/logout.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/css/product_title_new.gif"	access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/css/Error.gif"	access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/css/header_pattern.png" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<sec:intercept-url pattern="/**" access="ROLE_MANAGER" />
+		<sec:form-login login-processing-url="/static/j_spring_security_check" login-page="/login.jsp" authentication-failure-url="/autherror.jsp" />
+		<sec:anonymous />
+		<sec:http-basic />
+		<sec:logout invalidate-session="true" logout-success-url="/logout.jsp" logout-url="/static/j_spring_security_logout" />
+		<sec:custom-filter position="OPENID_FILTER" ref="myOpenIDAuthenticationFilter" />
+	</sec:http>
+
+	<bean id="myOpenIDAuthenticationFilter"	class="org.springframework.security.openid.OpenIDAuthenticationFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="consumer" ref="myOpenID4JavaConsumer" />
+	</bean>
+
+	<bean id="myOpenIDAuthenticationProvider" class="org.springframework.security.openid.OpenIDAuthenticationProvider">
+		<property name="authenticationUserDetailsService" ref="openIDUserDetailsService" />
+	</bean>
+
+	<sec:authentication-manager alias="authenticationManager">
+		<sec:authentication-provider ref="myOpenIDAuthenticationProvider" />
+	</sec:authentication-manager>
+
+	<bean id="openIDUserDetailsService" class="com.googlecode.psiprobe.openid.OpenIDUserDetailsService" />
+
+	<bean id="myOpenID4JavaConsumer" class="org.springframework.security.openid.OpenID4JavaConsumer">
+		<constructor-arg index="0" ref="myConsumerManager" />
+		<constructor-arg index="1">
+			<list value-type="org.springframework.security.openid.OpenIDAttribute">
+				<bean class="org.springframework.security.openid.OpenIDAttribute">
+					<constructor-arg index="0" value="role" />
+					<constructor-arg index="1"
+						value="http://zenworks.novell.com/role/probe" />
+					<property name="required" value="true" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="myConsumerManager" class="org.openid4java.consumer.ConsumerManager">
+		<constructor-arg index="0" ref="myRealmVerifierFactory" />
+		<constructor-arg index="1" ref="myDiscovery" />
+		<constructor-arg index="2" ref="myHttpFetcherFactory" />
+	</bean>
+	<bean id="myRealmVerifierFactory" class="org.openid4java.server.RealmVerifierFactory">
+		<constructor-arg index="0" ref="myYadisResolver" />
+	</bean>
+	<bean id="myYadisResolver" class="org.openid4java.discovery.yadis.YadisResolver">
+		<constructor-arg index="0" ref="myHttpFetcherFactory" />
+	</bean>
+	<bean id="myHttpFetcherFactory" class="org.openid4java.util.HttpFetcherFactory">
+		<constructor-arg index="0">
+			<bean
+				class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+				<property name="targetClass"
+					value="com.googlecode.psiprobe.openid.ProbeSSLContextProvider" />
+				<property name="targetMethod" value="getContext" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	<bean id="myDiscovery" class="org.openid4java.discovery.Discovery">
+		<constructor-arg index="0" ref="myHtmlResolver" />
+		<constructor-arg index="1" ref="myYadisResolver" />
+		<constructor-arg index="2" ref="myXriResolver" />
+	</bean>
+	<bean id="myHtmlResolver" class="org.openid4java.discovery.html.HtmlResolver">
+		<constructor-arg index="0" ref="myHttpFetcherFactory" />
+	</bean>
+	<bean id="myXriResolver" class="org.openid4java.discovery.xri.XriDotNetProxyResolver">
+		<constructor-arg index="0" ref="myHttpFetcherFactory" />
+	</bean>
+</beans>
