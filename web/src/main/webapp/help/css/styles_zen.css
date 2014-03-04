@@ -1,0 +1,27 @@
+@import url('styles.css');
+
+body { 
+		background: white url(../images/help_zcc_bg.gif) repeat-x 0% 0%;
+}
+
+/* headings */
+  h1,h2,h3,h4,h5,h6 {font-weight: bold; color: #000000;}
+	h1 {font-size: 130%; border-bottom: 2px solid #59828F; margin-top: 40px;}
+	h2 {font-size: 120%; margin-top: 5px;}
+	h3 {font-size: 110; margin-top: 5px;}
+	h4 {font-size: 105%; margin-top: 5px;}
+	h5 {font-size: 100%; margin-top: 5px;}
+	h6 {font-size: 100%; margin-top: 5px;}
+
+
+/*figures */
+	div.figure {position: absolute; z-index: 0; top: 0px; left: 0px; width: 380px; visibility: visible;}
+
+/* tables */
+	table.allseps, table.rowseps, table.topbot {font-size: 95%; border-spacing: 0px; border-top:1px solid #606060; border-bottom:1px solid #606060;}
+
+
+
+
+
+	

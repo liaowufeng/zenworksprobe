@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+
+<!-- saved from url=(0014)about:internet -->
+<html xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="Content-Date" content="Mon, 24 May 1913 12:00:00 GMT" />
+<meta name="Generator" content="Novell Documentation" />
+<meta name="Generation-Date" content="Monday, May 27, 2013" />
+<meta name="Copyright" content="Copyright Novell, Inc. 2013" />
+
+<link rel="stylesheet" type="text/css" href="css/styles_zen.css" />
+<!--[if lt IE 8]><link href="css/ie7down.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<title>ZENworks_Probe</title>
+</head>
+<body>
+<div style="border:1px;width:200%;height:200%;overflow:auto">
+<script type="text/javascript" src="../license.js"></script>
+<script type="text/javascript" src="css/profiles.js"></script>
+<script type="text/javascript" src="css/profiling.js"></script>
+<script type="text/javascript" src="css/expandable.js"></script>
+
+<div class="sect1" id="probe_page">
+
+<h1 class="title">ZENworks_Probe</h1>
+
+<p class="para">ZENworks Probe is an open source diagnostics toolkit useful in monitoring problems with Java processes. The ZENworks Probe page has the following tabs: </p>
+<div class="sect2" id="b15fggfl">
+
+<h2 class="title">Applications</h2>
+
+<span class="collapsible">
+
+<p class="para">The Application tab, provides information about each Web application deployed on the Tomcat server: list of Web application with total number of requests processed, whether it is running, total number of sessions, session timeout, and whether it is distributable. </p>
+<p class="para">The following tasks can be performed from this tab:</p>
+<div class="informaltable">
+<table class="topbot" width="100%"><col width="50%" /><col width="50%" />
+              
+<tr class="headerrow" id="b142ne1f"><th align="left" valign="top" colspan="1" rowspan="1" scope="col">
+<p class="para">Icons / Link</p></th>
+<th align="left" valign="top" colspan="1" rowspan="1" scope="col">
+<p class="para">Task</p></th>
+</tr>
+            
+<tr class="oddrow" id="b142ne1g"><td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para"><img src="images/undeploy_diagnostics1_n.png" alt="" class="inline" />
+        </p></td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to undeploy the application.</p></td>
+</tr>
+<tr class="evenrow" id="b142ne1h"><td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Status</p></td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this link to stop or start an application.</p></td>
+</tr>
+<tr class="oddrow" id="b142ne1i"><td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para"><img src="images/reset_diagnostics_n.gif" alt="" class="inline" />
+        </p></td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to refresh the application status.</p></td>
+</tr>
+<tr class="evenrow" id="b142ne1k"><td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Request count</p></td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this link to open the Servlet page. This page provides information about the number of request per servlet.</p></td>
+</tr>
+<tr class="oddrow" id="b1443quy"><td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para"><img src="images/bricks_diagnose_n.gif" alt="" class="inline" />
+        </p></td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to get statistics for all of the Web applications.</p></td>
+</tr></table>
+</div>
+
+<p class="para">This tab lists the installed web applications for the Tomcat server. The following fields are displayed in the panel:</p>
+<div class="note">
+<p class="para"><em class="title">NOTE:</em>For normal Java processes, this list will be empty.</p></div>
+
+<div class="formalpara" id="b1444ydu">
+          <p class="title"><em class="title">NAME: </em>
+          Specifies the application name. Click the application name to open the Application Summary page. </p>
+        </div>
+
+<div class="formalpara" id="b1444ydv">
+          <p class="title"><em class="title">STATUS:</em>
+          Specifies the status of the application, running or down. Click the status to stop or start an application.</p>
+        </div>
+
+<div class="formalpara" id="b1444ydw">
+          <p class="title"><em class="title">DESCRIPTION:</em>
+          Specifies the application description.</p>
+        </div>
+
+<div class="formalpara" id="b1444ydx">
+          <p class="title"><em class="title">REQ:</em>
+          Specifies the number of requests for the application. Click <span class="guimenu">REQ</span> to sort the application by request count. This helps you see how loaded an application is. </p>
+        </div>
+
+<div class="formalpara" id="b1444ydy">
+          <p class="title"><em class="title">SESS TIMEOUT:</em>
+          Specifies the session timeout configured for the application.</p>
+        </div>
+
+<div class="formalpara" id="b1444ydz">
+          <p class="title"><em class="title">CLSTRED.?:</em>
+          Specifies whether the application is distributable.</p>
+        </div>
+
+<div class="formalpara" id="b1447chp">
+          <p class="title"><em class="title">SESS.:</em>
+          Specifies the session count. </p>
+        </div>
+
+<p class="para">This page provides the following information: </p>
+<div class="itemizedlist">
+<ul class="listbullet">
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fggfm" class="xref">Application Summary</a>
+            </p></li>
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fggfp" class="xref">Application Deployment Descriptor</a>
+            </p></li>
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fggfq" class="xref">Application Servlet</a>
+            </p></li></ul></div>
+
+<div class="sect3" id="b15fggfm">
+
+<h3 class="title">Application Summary</h3>
+
+<p class="para">This page gives you the information that is specific to the selected application: Doc.Base, Servlet version, Number of servlets present for that application, session timeout, and whether it is serial or not.</p>
+<p class="para">The graphical representation of NUMBER OF REQUESTS and AVERAGE RESPONSE TIME helps users to determine the load for that application at any given time.</p>
+<p class="para">The following tasks can be performed by clicking on the icons:</p>
+<div class="informaltable">
+<table class="topbot" width="100%"><col width="50%" /><col width="50%" />
+                
+<tr class="headerrow" id="b1447chr"><th align="left" valign="top" colspan="1" rowspan="1" scope="col">
+<p class="para">Icon</p></th>
+<th align="left" valign="top" colspan="1" rowspan="1" scope="col">
+<p class="para">Description</p></th>
+</tr>
+              
+<tr class="oddrow" id="b1447chs"><td align="left" valign="top" colspan="1" rowspan="1">
+                        <img src="images/control_stop_n.gif" alt="" />
+                      </td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to stop the application.</p></td>
+</tr>
+<tr class="evenrow" id="b1447cht"><td align="left" valign="top" colspan="1" rowspan="1">
+                        <img src="images/control_repeat_n.gif" alt="" />
+                      </td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to reload the application.</p></td>
+</tr>
+<tr class="oddrow" id="b1447chu"><td align="left" valign="top" colspan="1" rowspan="1">
+                        <img src="images/undeploy_diagnostics1_n.png" alt="" />
+                      </td>
+<td align="left" valign="top" colspan="1" rowspan="1">
+<p class="para">Click this icon to undeploy the application.</p>
+<div class="note">
+<p class="para"><em class="title">NOTE:</em>If an application is undeployed, it cannot be deployed through probe again. However, it can be deployed by copying the webapp from another server or by locating the package that provides the webapp, extracting the <span class="filename">.war</span> file, and then deploying it.</p></div>
+</td>
+</tr></table>
+</div>
+
+<div class="sect4" id="b15fggfn">
+
+<h4 class="title">Application Information</h4>
+
+<p class="para">This panel displays the following application information:</p>
+<div class="formalpara" id="b1447x68">
+              <p class="title"><em class="title">Application name: </em>
+              The application name.</p>
+            </div>
+
+<div class="formalpara" id="b1447x69">
+              <p class="title"><em class="title">Doc.base:</em>
+              The document base directory (known as Context Root) for this web application, or the path name to the web application archive file (if executed directly from the WAR file).</p>
+            </div>
+
+<div class="formalpara" id="b1447x6a">
+              <p class="title"><em class="title">Description: </em>
+              The description for this application.</p>
+            </div>
+
+<div class="formalpara" id="b1447x6b">
+              <p class="title"><em class="title">Servlet version: </em>
+              The version of the servlet.</p>
+            </div>
+
+<div class="formalpara" id="b1447x6c">
+              <p class="title"><em class="title">Servlet count: </em>
+              The number of servlets available for this application. Click the servlet count value to open the Servlets page. </p>
+            </div>
+
+<div class="formalpara" id="b1447x6d">
+              <p class="title"><em class="title">Session timeout: </em>
+              The session timeout configured for this application.</p>
+            </div>
+
+<div class="formalpara" id="b1447xrb">
+              <p class="title"><em class="title">Clustered:</em>
+              Whether the application is clustered.</p>
+            </div>
+
+</div>
+
+<div class="sect4" id="b15fggfo">
+
+<h4 class="title">Statistics Charts</h4>
+
+<p class="para">This panel displays the following statistics charts for the application:</p>
+<div class="formalpara" id="b144cs0n">
+              <p class="title"><em class="title">NUMBER OF REQUESTS: </em>
+              A chart with coordinates corresponding to the REQUEST COUNT (Total number of requests for that application) and ERROR COUNT (Number of errors).</p>
+            </div>
+
+<div class="formalpara" id="b144cs0o">
+              <p class="title"><em class="title">AVERAGE RESPONSE TIME (MS):</em>
+              A chart with coordinates corresponding to PROCESSING TIME (Processing time for the request), MIN TIME (Minimum time), MAX TIME (Maximum time), and AVG RESPONSE TIME (Average response time).</p>
+            </div>
+
+</div>
+
+</div>
+
+<div class="sect3" id="b15fggfp">
+
+<h3 class="title">Application Deployment Descriptor</h3>
+
+<p class="para">This page displays the <span class="filename">web.xml </span>of the application. This contains important information such as url-mapping, which helps you understand which servlet will be called for a specific type of URL.</p>
+<p class="para">Click <img src="images/downld_n.gif" alt="" class="inline" /> <span class="guimenu">download</span> to download the XML file. 
+    </p>
+</div>
+
+<div class="sect3" id="b15fggfq">
+
+<h3 class="title">Application Servlet</h3>
+
+<p class="para">This page displays the following servlet information: </p>
+<div class="formalpara" id="b144m7yw">
+            <p class="title"><em class="title">NAME:</em>
+            The name of the servlet.</p>
+          </div>
+
+<div class="formalpara" id="b144m7yx">
+            <p class="title"><em class="title">AVAIL: </em>
+            Whether the servlet is available.</p>
+          </div>
+
+<div class="formalpara" id="b144m7yy">
+            <p class="title"><em class="title">STARTUP:</em>
+            The sequence in which the servlet is loaded at servlet container startup.</p>
+          </div>
+
+<div class="formalpara" id="b144m7yz">
+            <p class="title"><em class="title">LOAD TIME:</em>
+            The servlet load time.</p>
+          </div>
+
+<div class="formalpara" id="b144m7z0">
+            <p class="title"><em class="title">REQ.: </em>
+            The number of requests processed by each servlet.</p>
+          </div>
+
+<div class="formalpara" id="b144m7z1">
+            <p class="title"><em class="title">PROC TIME: </em>
+            The processing time.</p>
+          </div>
+
+<div class="formalpara" id="b144m9cz">
+            <p class="title"><em class="title">ERR:</em>
+            The error count.</p>
+          </div>
+
+<div class="formalpara" id="b144m9d0">
+            <p class="title"><em class="title">MIN TIME:</em>
+            The minimum processing time.</p>
+          </div>
+
+<div class="formalpara" id="b144m9d1">
+            <p class="title"><em class="title">MAX TIME:</em>
+            The maximum processing time.</p>
+          </div>
+
+<div class="formalpara" id="b144m9d2">
+            <p class="title"><em class="title">MULTI THRD:</em>
+            Whether the servlet is multithreaded.</p>
+          </div>
+
+<div class="formalpara" id="b144mar4">
+            <p class="title"><em class="title">Servlet mappings:</em>
+            Open the Servlet mapping page.</p>
+          </div>
+
+<div class="formalpara" id="b144md8q">
+            <p class="title"><em class="title">Show All: </em>
+            Open the Servlet page, which lists the information for all servlets on the Tomcat server.</p>
+          </div>
+
+<div class="sect4" id="b15fginm">
+
+<h4 class="title">Servlet Mappings</h4>
+
+<p class="para">This page displays the mapping between the servlets and the URLs:</p>
+<div class="formalpara" id="b144mih0">
+              <p class="title"><em class="title">URL:</em>
+              The URL patterns for the request.</p>
+            </div>
+
+<div class="formalpara" id="b144mih1">
+              <p class="title"><em class="title">SERVLET NAME:</em>
+              The name of the servlet that handles the request.</p>
+            </div>
+
+<div class="formalpara" id="b144mih2">
+              <p class="title"><em class="title">SERVLET CLASS:</em>
+              The servlet class name.</p>
+            </div>
+
+<div class="formalpara" id="b144mih3">
+              <p class="title"><em class="title">AVAIL:</em>
+              Whether the servlet is available.</p>
+            </div>
+
+</div>
+
+</div>
+
+</span>
+
+</div>
+
+<div class="sect2" id="b15fginn">
+
+<h2 class="title">Threads</h2>
+
+<span class="collapsible">
+
+<p class="para">This tab displays the following information about the threads running on the current Java Virtual Machine (JVM):</p>
+<div class="formalpara" id="b144mtam">
+          <p class="title"><em class="title">ID:</em>
+          The thread ID.</p>
+        </div>
+
+<div class="formalpara" id="b144mtan">
+          <p class="title"><em class="title">NAME:</em>
+          The thread name.</p>
+        </div>
+
+<div class="formalpara" id="b144mtao">
+          <p class="title"><em class="title">EXEX. POINT:</em>
+          The current execution point for the thread.</p>
+        </div>
+
+<div class="formalpara" id="b144mtap">
+          <p class="title"><em class="title">STATE:</em>
+          The state of the thread.</p>
+        </div>
+
+<div class="formalpara" id="b144mtaq">
+          <p class="title"><em class="title">IN.NATIVE:</em>
+          Whether the thread is executing native code.</p>
+        </div>
+
+<div class="formalpara" id="b144mtar">
+          <p class="title"><em class="title">SUSP.:</em>
+          Whether the thread is suspended.</p>
+        </div>
+
+<div class="formalpara" id="b144mtas">
+          <p class="title"><em class="title">WC:</em>
+          The total number of times the thread was in wait notification state.That is, the number of times a thread has been in <span class="filename">java.lang.Thread.State.WAITING</span> or <span class="filename">java.lang.Thread.State.TIMED_WAITING</span> state.</p>
+        </div>
+
+<div class="formalpara" id="b144mtat">
+          <p class="title"><em class="title">BC:</em>
+          The total number of times the thread was blocked. That is, the number of times a thread has been in the <span class="filename">java.lang.Thread.State.BLOCKED</span> state. </p>
+        </div>
+
+<div class="formalpara" id="b144mvto">
+          <p class="title"><em class="title">Threads Pool:</em>
+          Open the Threads Pools page.</p>
+        </div>
+
+<div class="formalpara" id="b15fhmgp">
+          <p class="title"><em class="title">Dump All Threads:</em>
+          Provides access to the thread dump of the system in its present state. This can be saved on the local machine and opened in any thread dump analyzer. </p>
+        </div>
+
+<div class="sect3" id="b15fgino">
+
+<h3 class="title">Threads Pools</h3>
+
+<p class="para">This page displays the following thread pool information for the Tomcat process:</p>
+<div class="formalpara" id="b144n204">
+            <p class="title"><em class="title">NAME:</em>
+            The name of the thread pool.</p>
+          </div>
+
+<div class="formalpara" id="b144n205">
+            <p class="title"><em class="title">CURRENT THREAD COUNT:</em>
+            The number of threads running from this thread pool.</p>
+          </div>
+
+<div class="formalpara" id="b144n206">
+            <p class="title"><em class="title">CURRENT THREADS BUSY: </em>
+            The number of threads that are busy.</p>
+          </div>
+
+<div class="formalpara" id="b144n207">
+            <p class="title"><em class="title">MAX THREADS:</em>
+            The maximum number of threads.</p>
+          </div>
+
+<div class="formalpara" id="b144n208">
+            <p class="title"><em class="title">MAX SPARE THREADS:</em>
+            The maximum number of spare threads.</p>
+          </div>
+
+<div class="formalpara" id="b144n209">
+            <p class="title"><em class="title">MIN SPARE THREADS: </em>
+            The minimum number of spare threads.</p>
+          </div>
+
+</div>
+
+</span>
+
+</div>
+
+<div class="sect2" id="b15fgtbb">
+
+<h2 class="title">System</h2>
+
+<span class="collapsible">
+
+<p class="para">This page provides links to the following system information:</p>
+<div class="formalpara" id="b144nizz">
+          <p class="title"><em class="title">Overview: </em>
+          Open the System Information page.</p>
+        </div>
+
+<div class="formalpara" id="b144nj00">
+          <p class="title"><em class="title">Memory utilization: </em>
+          Open the Memory Utilization page.</p>
+        </div>
+
+<div class="formalpara" id="b144nj01">
+          <p class="title"><em class="title">System properties: </em>
+          Open the System Properties page.</p>
+        </div>
+
+<div class="formalpara" id="b144nj02">
+          <p class="title"><em class="title">OS information: </em>
+          Open the OS Information page.</p>
+        </div>
+
+<div class="itemizedlist">
+<ul class="listbullet">
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fgtbc" class="xref">System Overview</a>
+            </p></li>
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fgtbg" class="xref">Memory Utilization</a>
+            </p></li>
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fgtbh" class="xref">System Properties</a>
+            </p></li>
+<li class="listitem">
+<p class="listitem">
+              <a href="./probe_page.html#b15fgtbi" class="xref">OS Information</a>
+            </p></li></ul></div>
+
+<div class="sect3" id="b15fgtbc">
+
+<h3 class="title">System Overview</h3>
+
+<p class="para">This page provides information about memory utilization, operating system, and the Tomcat container. </p>
+<div class="sect4" id="b15fgtbd">
+
+<h4 class="title">Memory Utilization Panel</h4>
+
+<p class="para">This panel displays the following memory utilization information: </p>
+<div class="formalpara" id="b144np8x">
+              <p class="title"><em class="title">CURRENT MEMORY USAGE IS: </em>
+              The current memory usage.</p>
+            </div>
+
+<div class="formalpara" id="b144np8y">
+              <p class="title"><em class="title">FREE:</em>
+              The free space available.</p>
+            </div>
+
+<div class="formalpara" id="b144np8z">
+              <p class="title"><em class="title">TOTAL:</em>
+              The total memory space.</p>
+            </div>
+
+<div class="formalpara" id="b144np90">
+              <p class="title"><em class="title">MAX: </em>
+              The maximum memory space available. </p>
+            </div>
+
+<div class="formalpara" id="b144nqd6">
+              <p class="title"><em class="title">Advice Garbage collection:</em>
+              Click this link to advise the JVM to perform garbage collection.</p>
+            </div>
+
+</div>
+
+<div class="sect4" id="b15fgtbe">
+
+<h4 class="title">OS Information Panel </h4>
+
+<p class="para">This panel displays the following OS information: </p>
+<div class="formalpara" id="b144p8iv">
+              <p class="title"><em class="title">JVM: </em>
+              The Java platform and version.</p>
+            </div>
+
+<div class="formalpara" id="b144p8iw">
+              <p class="title"><em class="title">OS: </em>
+              The operating system name and version.</p>
+            </div>
+
+<div class="formalpara" id="b144p8ix">
+              <p class="title"><em class="title">PROCESSORS:</em>
+              The number of processors.</p>
+            </div>
+
+<div class="formalpara" id="b144p8iy">
+              <p class="title"><em class="title">CURRENT TIME:</em>
+              The current time.</p>
+            </div>
+
+<div class="formalpara" id="b144p8iz">
+              <p class="title"><em class="title">WORKING DIR:</em>
+              The working directory for the Tomcat server.</p>
+            </div>
+
+</div>
+
+<div class="sect4" id="b15fgtbf">
+
+<h4 class="title">Container information Panel</h4>
+
+<p class="para">This panel displays the following Tomcat container information: </p>
+<div class="formalpara" id="b144pcbz">
+              <p class="title"><em class="title">CONTAINER:</em>
+              The container name.</p>
+            </div>
+
+<div class="formalpara" id="b144pcc0">
+              <p class="title"><em class="title">CATALINA.BASE:</em>
+              The catalina base path.</p>
+            </div>
+
+<div class="formalpara" id="b144pcc1">
+              <p class="title"><em class="title">CATALINA.HOME:</em>
+              The catalina home directory path.</p>
+            </div>
+
+<div class="formalpara" id="b144pcc2">
+              <p class="title"><em class="title">APPLICATION BASE:</em>
+              The application base path.</p>
+            </div>
+
+<div class="formalpara" id="b144pcc3">
+              <p class="title"><em class="title">CONFIGURAION BASE:</em>
+              The configuration base path.</p>
+            </div>
+
+</div>
+
+</div>
+
+<div class="sect3" id="b15fgtbg">
+
+<h3 class="title">Memory Utilization</h3>
+
+<p class="para">This page displays the memory utilization for Java objects in different generations and based on the usage, can even advise for garbage collection. This page has the following panels: </p>
+<div class="formalpara" id="b144pkl9">
+            <p class="title"><em class="title">CURRENT MEMORY USAGE:</em>
+            </p>
+          </div>
+
+<div class="itemizedlist">
+<ul class="listbullet">
+<li class="listitem">
+<p class="listitem">NAME: The name of the pool.</p></li>
+<li class="listitem">
+<p class="listitem">USAGE SCORE: The usage scope bar chart.</p></li>
+<li class="listitem">
+<p class="listitem">PLOT: Hides or unhides the memory usage graph. </p></li>
+<li class="listitem">
+<p class="listitem">USED: The amount of memory currently used, including the memory occupied by all objects, both reachable and unreachable.</p></li>
+<li class="listitem">
+<p class="listitem">COMMITTED: The amount of memory guaranteed to be available for use by the JVM. The amount of committed memory may change over time. For example, the Java virtual machine might release memory to the system, so the amount of committed memory could be less than the amount of memory initially allocated at start up. The amount of committed memory will always be greater than or equal to the amount of used memory.</p></li>
+<li class="listitem">
+<p class="listitem">MAXIMUM: The maximum amount of memory that can be used for memory management. Its value could change or be undefined. A memory allocation could fail if the Java VM attempts to increase the used memory to an amount greater than committed memory, even if the amount used is less than or equal to maximum value (for example, when the system is low on virtual memory).</p></li>
+<li class="listitem">
+<p class="listitem">INITIAL: The initial memory allocated.</p></li>
+<li class="listitem">
+<p class="listitem">TOTAL: The total memory allocated.</p></li></ul></div>
+
+<div class="formalpara" id="b144plks">
+            <p class="title"><em class="title">MEMORY USAGE HISTORY:</em>
+            </p>
+          </div>
+
+<div class="itemizedlist">
+<ul class="listbullet">
+<li class="listitem">
+<p class="listitem">Permanent Generation (non-heap): The pool containing all of the reflective data on the virtual machine itself, such as class and method objects. With Java VMs that use class data sharing, this generation is divided into read-only and read-write areas.</p></li>
+<li class="listitem">
+<p class="listitem">Tenured Generation (heap): The pool containing objects that have existed for some time in the survivor space.</p></li>
+<li class="listitem">
+<p class="listitem">Survivor Space (heap): The pool containing objects that have survived the garbage collection of the Eden space.</p></li>
+<li class="listitem">
+<p class="listitem">Code Cache (non-heap): The HotSpot JVM also includes a code cache, containing memory that is used for the compilation and storage of native code.</p></li>
+<li class="listitem">
+<p class="listitem">Eden Space (heap): The pool from which memory is initially allocated for most objects.</p></li></ul></div>
+
+</div>
+
+<div class="sect3" id="b15fgtbh">
+
+<h3 class="title">System Properties</h3>
+
+<p class="para">This page displays the following Java system properties information: </p>
+<div class="formalpara" id="b144qsd2">
+            <p class="title"><em class="title">PROPERTY NAME:</em>
+             The system property name.</p>
+          </div>
+
+<div class="formalpara" id="b144qsd3">
+            <p class="title"><em class="title">PROPERTY VALUE: </em>
+            The property value.</p>
+          </div>
+
+</div>
+
+<div class="sect3" id="b15fgtbi">
+
+<h3 class="title">OS Information</h3>
+
+<p class="para">This page displays the following operating system information: </p>
+<div class="formalpara" id="b144qv69">
+            <p class="title"><em class="title">OS Information:</em>
+            This panel displays the OS name, Version, Total RAM, Free RAM, Committed JVM memory (the amount of virtual memory guaranteed to be available to the running process), Total swap, and Free swap.</p>
+          </div>
+
+<div class="formalpara" id="b144qv6a">
+            <p class="title"><em class="title">HISTORICAL CHATS:</em>
+            This panel displays the JVM CPU UTILIZATION (%) chart, OS &amp; JVM MEMORY USAGE(KB) chart, and SWAP USAGE(KB) chart.</p>
+          </div>
+
+</div>
+
+</span>
+
+</div>
+
+<div class="sect2" id="b15fgtbj">
+
+<h2 class="title">Connectors</h2>
+
+<span class="collapsible">
+
+<p class="para">This page provides the list of connectors and its information for Tomcat servers. The charts in this tab helps users to find out the number of incoming requests for each connector and how much time it took to process at each interval and the amount of data that got transferred at each interval. The user can find the remote IP which is requesting for a particular URL and the time it took for processing that request.</p>
+<p class="para">The following chart is displayed for each connector type:</p>
+<div class="formalpara" id="b144qxv3">
+          <p class="title"><em class="title">NUMBER OF REQUESTS IN EACH INTERVAL:</em>
+          The number of requests in each interval.</p>
+        </div>
+
+<div class="formalpara" id="b144qxv4">
+          <p class="title"><em class="title">PROCESSING TIME (MS) IN EACH INTERVAL:</em>
+          The processing time spent for the requests in each interval.</p>
+        </div>
+
+<div class="formalpara" id="b144qxv5">
+          <p class="title"><em class="title">TRAFFIC VOLUME (BYTES) IN EACH INTERVAL:</em>
+          The traffic volume in each interval.</p>
+        </div>
+
+<div class="formalpara" id="b144qyb7">
+          <p class="title"><em class="title">Other information:</em>
+          The remote IP of the request, the stage of the request, processing time for the request, and the originating URL of the request has come.</p>
+        </div>
+
+</span>
+
+</div>
+
+</div>
+
+<p class="trademark"> For trademark and copyright information, see <a href="./legal.html">Legal Notices</a>.</p>
+</div>
+</body>
+</html>
