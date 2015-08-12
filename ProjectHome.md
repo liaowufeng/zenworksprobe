@@ -1,0 +1,1 @@
+The key changes done in zen-Probe include:  OpenID Authentication  Connecting to a remote JVM (should Java Application be connecting to a remote Java application?)  Thread Dump  Heap Dump
